@@ -1,0 +1,28 @@
+services:
+  fraud-api:
+    build: .
+    image: fraud-detection-service:v1
+    container_name: fraud-api
+    ports:
+      - "8000:8000"
+    environment:
+      # Compose refuses to start if this is unset -> auth can never silently fail open.
+      # Put it in a .env file next to this file:  FRAUD_API_KEY=<long-random-string>
+      FRAUD_API_KEY: ${FRAUD_API_KEY:?Set FRAUD_API_KEY in your .env file}
+      FRAUD_DB_PATH: /srv/data/fraud_registry.db
+      FRAUD_AUDIT_LOG_PATH: /srv/data/audit_log.jsonl
+    volumes:
+      # Named volume holding fraud_registry.db (Layer 3 velocity store) and
+      # audit_log.jsonl (compliance trail). Without this, both are wiped on
+      # every container rebuild.
+      - fraud_data:/srv/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  fraud_data:

@@ -1,0 +1,110 @@
+{
+  "application_id": "APP-2026-EG-99999",
+  "applicant_type": "individual",
+  "submission_timestamp": "2026-09-16T10:00:00Z",
+  "is_returning_customer": false,
+  "documents": [
+    {
+      "document_type": "national_id",
+      "overall_quality_score": 0.94,
+      "is_tampered_suspected": false,
+      "extracted_fields": {
+        "full_name": "كريم سامي عبد الفتاح",
+        "national_id": "28511201234567"
+      }
+    },
+    {
+      "document_type": "salary_certificate",
+      "overall_quality_score": 0.72,
+      "is_tampered_suspected": true,
+      "extracted_fields": {
+        "employer_name": "الشركة الدولية للاستشارات والبرمجيات",
+        "declared_net_salary": 55000.0
+      }
+    },
+    {
+      "document_type": "bank_statement",
+      "overall_quality_score": 0.88,
+      "is_tampered_suspected": false,
+      "extracted_fields": {
+        "bank_name": "بنك القاهرة",
+        "avg_monthly_net_inflow": 12000.0,
+        "avg_monthly_balance": 8500.0
+      }
+    },
+    {
+      "document_type": "iscore_report",
+      "overall_quality_score": 0.96,
+      "is_tampered_suspected": false,
+      "extracted_fields": {
+        "credit_score": 540,
+        "score_tier": "Fair"
+      }
+    }
+  ],
+  "national_id_fields": {
+    "full_name": {
+      "value": "كريم سامي عبد الفتاح",
+      "confidence": 0.95
+    },
+    "national_id": {
+      "value": "28511201234567",
+      "confidence": 0.96
+    },
+    "age_years": {
+      "value": 40.8,
+      "confidence": 0.99
+    }
+  },
+  "salary_certificate_fields": {
+    "employer_name": {
+      "value": "International Software Consulting",
+      "confidence": 0.75
+    },
+    "declared_net_salary": {
+      "value": 55000.0,
+      "confidence": 0.7
+    }
+  },
+  "bank_statement_fields": {
+    "avg_monthly_net_inflow": {
+      "value": 12000.0,
+      "confidence": 0.9
+    },
+    "avg_monthly_balance": {
+      "value": 8500.0,
+      "confidence": 0.88
+    },
+    "returned_cheques_count": {
+      "value": 2,
+      "confidence": 0.95
+    }
+  },
+  "iscore_report_fields": {
+    "is_available": true,
+    "credit_score": {
+      "value": 540,
+      "confidence": 0.96
+    },
+    "bureau_facilities": []
+  },
+  "form_data": {
+    "requested_amount": 350000.0,
+    "tenure_months": 36,
+    "requested_annuity": 14500.0,
+    "loan_purpose": "personal_cash"
+  },
+  "internal_history": {
+    "internal_history_missing": 1,
+    "aggregated_metrics": {}
+  },
+  "consistency_checks": {
+    "income_mismatch_ratio": 0.78,
+    "employer_name_match": false,
+    "employer_match_similarity_score": 0.32,
+    "national_id_match_across_documents": true,
+    "iscore_report_age_days": 48,
+    "running_balance_math_valid": false,
+    "fraud_risk_level": "CRITICAL"
+  }
+}

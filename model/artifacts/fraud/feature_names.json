@@ -1,0 +1,14 @@
+[
+  "income_mismatch_ratio",
+  "annuity_to_balance_ratio",
+  "balance_volatility_cv",
+  "surge_ratio_max_to_avg",
+  "ocr_quality_mean",
+  "min_to_avg_balance_ratio",
+  "applicant_age_norm",
+  "employment_tenure_years",
+  "inflow_regularity_score",
+  "iscore_normalized",
+  "inflow_uniformity_score",
+  "bureau_facilities_count"
+]

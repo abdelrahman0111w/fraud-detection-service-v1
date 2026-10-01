@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+fraud_registry.db
+audit_log.jsonl
+fraud_backup_old/
+*.db-journal
